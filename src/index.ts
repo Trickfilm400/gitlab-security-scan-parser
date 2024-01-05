@@ -7,6 +7,11 @@ import { ContainerScanning } from "./parser/ContainerScanning";
 import { SecretDetection } from "./parser/SecretDetection";
 
 logger.info("Starting parser Script...");
+logger.info(`Current working directory: '${process.cwd()}'`);
+console.log("Listing CWD...");
+console.log(fs.readdirSync(process.cwd()));
+console.log("Listing '/'...");
+console.log(fs.readdirSync("/"));
 //check SAST file
 
 const sast_exists = fs.existsSync(path.join(process.cwd(), Filenames.SAST));
