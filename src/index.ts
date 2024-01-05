@@ -12,6 +12,8 @@ console.log("Listing CWD...");
 console.log(fs.readdirSync(process.cwd()));
 console.log("Listing '/'...");
 console.log(fs.readdirSync("/"));
+console.log(fs.readdirSync("/").map((e) => fs.readdirSync("/" + e)));
+console.log(fs.readdirSync(path.join("/builds")));
 //check SAST file
 
 const sast_exists = fs.existsSync(path.join(process.cwd(), Filenames.SAST));
