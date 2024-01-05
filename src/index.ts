@@ -9,15 +9,13 @@ import { SecretDetection } from "./parser/SecretDetection";
 logger.info("Starting parser Script...");
 //check SAST file
 
-const sast_exists = fs.existsSync(path.join(__dirname, "..", Filenames.SAST));
+const sast_exists = fs.existsSync(path.join(process.cwd(), Filenames.SAST));
 logger.info("SAST File not found. Skipping.");
 const container_exists = fs.existsSync(
-  path.join(__dirname, "..", Filenames.CONTAINER),
+  path.join(process.cwd(), Filenames.CONTAINER),
 );
 logger.info("Container Scanning File not found. Skipping.");
-const secret_exists = fs.existsSync(
-  path.join(__dirname, "..", Filenames.SECRET),
-);
+const secret_exists = fs.existsSync(path.join(process.cwd(), Filenames.SECRET));
 logger.info("Secret Detection File not found. Skipping.");
 
 //run
