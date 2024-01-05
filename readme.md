@@ -1,4 +1,4 @@
-# gitlab-security-scann-parser
+# gitlab-security-scan-parser
 
 
 ## About this project
