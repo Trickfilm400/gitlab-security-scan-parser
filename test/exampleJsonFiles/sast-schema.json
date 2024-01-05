@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/sast-report-format.json",
+  "title": "Report format for GitLab SAST",
+  "description": "This schema provides the report format for Static Application Security Testing analyzers (https://docs.gitlab.com/ee/user/application_security/sast).",
+  "allOf": [
+    { "$ref": "security-report-format.json" },
+    {
+      "properties": {
+        "scan": {
+          "properties": {
+            "type": {
+              "enum": ["sast"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "vulnerabilities": {
+          "items": {
+            "properties": {
+              "location": { "$ref": "#/definitions/location" },
+              "raw_source_code_extract": {
+                "type": "string",
+                "description": "Provides an unsanitized excerpt of the affected source code."
+              }
+            },
+            "required": [ "location" ]
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "location": {
+      "type": "object",
+      "description": "Identifies the vulnerability's location.",
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Path to the file where the vulnerability is located."
+        },
+        "start_line": {
+          "type": "number",
+          "description": "The first line of the code affected by the vulnerability."
+        },
+        "end_line": {
+          "type": "number",
+          "description": "The last line of the code affected by the vulnerability."
+        },
+        "class": {
+          "type": "string",
+          "description": "Provides the name of the class where the vulnerability is located."
+        },
+        "method": {
+          "type": "string",
+          "description": "Provides the name of the method where the vulnerability is located."
+        }
+      }
+    }
+  }
+}

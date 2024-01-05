@@ -1,0 +1,193 @@
+{
+  "version": "15.0.7",
+  "vulnerabilities": [
+    {
+      "id": ":SKIP:",
+      "category": "sast",
+      "name": "Improper neutralization of directives in dynamically evaluated code ('Eval Injection')",
+      "description": "The application was found calling the `eval` function with a non-literal variable. If the\nvariable comes from user-supplied input, an adversary could attempt to execute arbitrary\nJavaScript\ncode. This could lead to a full system compromise in Node applications or Cross-site Scripting\n(XSS) in web applications.\n\nTo remediate this issue, remove all calls to `eval` and consider alternative methods for\nexecuting\nthe necessary business logic. There is almost no safe method of calling `eval` with\nuser-supplied input.\nInstead, consider alternative methods such as using property accessors to dynamically access\nvalues.\n\nExample using property accessors to dynamically access an object's property:\n```\n// Define an object\nconst obj = {key1: 'value1', key2: 'value2'};\n// Get key dynamically from user input\nconst key = getUserInput();\n// Check if the key exists in our object and return it, or a default empty string\nconst value = (obj.hasOwnProperty(key)) ? obj[key] : '';\n// Work with the value\n```\n\nFor more information on why not to use `eval`, and alternatives see:\n- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!\n",
+      "cve": "semgrep_id:eslint.detect-eval-with-expression:10:10",
+      "severity": "Medium",
+      "scanner": {
+        "id": "semgrep",
+        "name": "Semgrep"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 10
+      },
+      "identifiers": [
+        {
+          "type": "semgrep_id",
+          "name": "eslint.detect-eval-with-expression",
+          "value": "eslint.detect-eval-with-expression",
+          "url": "https://semgrep.dev/r/gitlab.eslint.detect-eval-with-expression"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-95",
+          "value": "95",
+          "url": "https://cwe.mitre.org/data/definitions/95.html"
+        },
+        {
+          "type": "owasp",
+          "name": "A1:2017 - Injection",
+          "value": "A1:2017"
+        },
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID/detect-eval-with-expression",
+          "value": "detect-eval-with-expression"
+        }
+      ],
+      "tracking": {
+        "type": "source",
+        "items": [
+          {
+            "file": "src/js/main.js",
+            "line_start": 10,
+            "line_end": 10,
+            "signatures": [
+              {
+                "algorithm": "scope_offset",
+                "value": "src/js/main.js|dangerous_eval[0]:1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": ":SKIP:",
+      "category": "sast",
+      "name": "Improper neutralization of directives in dynamically evaluated code ('Eval Injection')",
+      "description": "The application was found calling the `eval` function with a non-literal variable. If the\nvariable comes from user-supplied input, an adversary could attempt to execute arbitrary\nJavaScript\ncode. This could lead to a full system compromise in Node applications or Cross-site Scripting\n(XSS) in web applications.\n\nTo remediate this issue, remove all calls to `eval` and consider alternative methods for\nexecuting\nthe necessary business logic. There is almost no safe method of calling `eval` with\nuser-supplied input.\nInstead, consider alternative methods such as using property accessors to dynamically access\nvalues.\n\nExample using property accessors to dynamically access an object's property:\n```\n// Define an object\nconst obj = {key1: 'value1', key2: 'value2'};\n// Get key dynamically from user input\nconst key = getUserInput();\n// Check if the key exists in our object and return it, or a default empty string\nconst value = (obj.hasOwnProperty(key)) ? obj[key] : '';\n// Work with the value\n```\n\nFor more information on why not to use `eval`, and alternatives see:\n- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!\n",
+      "cve": "semgrep_id:eslint.detect-eval-with-expression:22:22",
+      "severity": "Medium",
+      "scanner": {
+        "id": "semgrep",
+        "name": "Semgrep"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 22
+      },
+      "identifiers": [
+        {
+          "type": "semgrep_id",
+          "name": "eslint.detect-eval-with-expression",
+          "value": "eslint.detect-eval-with-expression",
+          "url": "https://semgrep.dev/r/gitlab.eslint.detect-eval-with-expression"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-95",
+          "value": "95",
+          "url": "https://cwe.mitre.org/data/definitions/95.html"
+        },
+        {
+          "type": "owasp",
+          "name": "A1:2017 - Injection",
+          "value": "A1:2017"
+        },
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID/detect-eval-with-expression",
+          "value": "detect-eval-with-expression"
+        }
+      ],
+      "tracking": {
+        "type": "source",
+        "items": [
+          {
+            "file": "src/js/main.js",
+            "line_start": 22,
+            "line_end": 22,
+            "signatures": [
+              {
+                "algorithm": "scope_offset",
+                "value": "src/js/main.js|dangerous_eval_var[0]:1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": ":SKIP:",
+      "category": "sast",
+      "name": "Regular expression with non-literal value",
+      "description": "The `RegExp` constructor was called with a non-literal value. If an adversary were able to\nsupply a malicious regex, they could cause a Regular Expression Denial of Service (ReDoS)\nagainst the application. In Node applications, this could cause the entire application to no\nlonger\nbe responsive to other users' requests.\n\nTo remediate this issue, never allow user-supplied regular expressions. Instead, the regular\nexpression should be\nhardcoded. If this is not possible, consider using an alternative regular expression engine\nsuch as [node-re2](https://www.npmjs.com/package/re2). RE2 is a safe alternative that does not\nsupport backtracking, which is what leads to ReDoS.\n\nExample using re2 which does not support backtracking (Note: it is still recommended to\nnever use user-supplied input):\n```\n// Import the re2 module\nconst RE2 = require('re2');\n\nfunction match(userSuppliedRegex, userInput) {\n    // Create a RE2 object with the user supplied regex, this is relatively safe\n    // due to RE2 not supporting backtracking which can be abused to cause long running\n    // queries\n    var re = new RE2(userSuppliedRegex);\n    // Execute the regular expression against some userInput\n    var result = re.exec(userInput);\n    // Work with the result\n}\n```\n\nFor more information on Regular Expression DoS see:\n- https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS\n",
+      "cve": "semgrep_id:eslint.detect-non-literal-regexp:16:16",
+      "severity": "Medium",
+      "scanner": {
+        "id": "semgrep",
+        "name": "Semgrep"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 16
+      },
+      "identifiers": [
+        {
+          "type": "semgrep_id",
+          "name": "eslint.detect-non-literal-regexp",
+          "value": "eslint.detect-non-literal-regexp",
+          "url": "https://semgrep.dev/r/gitlab.eslint.detect-non-literal-regexp"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-185",
+          "value": "185",
+          "url": "https://cwe.mitre.org/data/definitions/185.html"
+        },
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID/detect-non-literal-regexp",
+          "value": "detect-non-literal-regexp"
+        }
+      ],
+      "tracking": {
+        "type": "source",
+        "items": [
+          {
+            "file": "src/js/main.js",
+            "line_start": 16,
+            "line_end": 16,
+            "signatures": [
+              {
+                "algorithm": "scope_offset",
+                "value": "src/js/main.js|dangerous_regexp[0]:1"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "dependency_files": [],
+  "scan": {
+    "analyzer": {
+      "id": "semgrep",
+      "name": "Semgrep",
+      "url": "https://gitlab.com/gitlab-org/security-products/analyzers/semgrep",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": ":SKIP:"
+    },
+    "scanner": {
+      "id": "semgrep",
+      "name": "Semgrep",
+      "url": "https://github.com/returntocorp/semgrep",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": ":SKIP:"
+    },
+    "type": "sast",
+    "start_time": ":SKIP:",
+    "end_time": ":SKIP:",
+    "status": "success"
+  }
+}

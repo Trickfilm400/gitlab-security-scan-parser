@@ -1,0 +1,443 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "857114844e8ac6cf5c9946ac4d40ab73eccf35df",
+      "category": "container_scanning",
+      "message": "CVE-2022-22576 in curl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows reusing OAUTH2-authenticated connections without properly ensuring that the connection was authenticated with the same credentials set for this transfer. This issue leads to an authentication bypass, either by mistake or by a malicious actor.",
+      "cve": "CVE-2022-22576",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade curl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-22576",
+          "value": "CVE-2022-22576",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-22576"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-22576"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-22576.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "09675f15e9a285de79a477f12d03bcc08dda8d80",
+      "category": "container_scanning",
+      "message": "CVE-2022-27774 in curl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows leaking credentials to other servers when it follows redirects from auth-protected HTTP(S) URLs to other protocols and port numbers.",
+      "cve": "CVE-2022-27774",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade curl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27774",
+          "value": "CVE-2022-27774",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27774"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27774"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27774.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "7c07e0b19de5536323882ffb492ec7d3fdf5d029",
+      "category": "container_scanning",
+      "message": "CVE-2022-27775 in curl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw occurs due to errors in the logic where the config matching function did not take the IPv6 address zone id into account. This issue can lead to curl reusing the wrong connection when one transfer uses a zone id, and the subsequent transfer uses another.",
+      "cve": "CVE-2022-27775",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade curl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27775",
+          "value": "CVE-2022-27775",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27775"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27775"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27775.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27775"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "be0740fbe8024b6041fad1af45062e2acaefb169",
+      "category": "container_scanning",
+      "message": "CVE-2022-27776 in curl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows leak authentication or cookie header data on HTTP redirects to the same host but another port number. Sending the same set of headers to a server on a different port number is a problem for applications that pass on custom `Authorization:` or `Cookie:`headers. Those headers often contain privacy-sensitive information or data.",
+      "cve": "CVE-2022-27776",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade curl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "curl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27776",
+          "value": "CVE-2022-27776",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27776"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27776"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27776.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "8fbba0e54af83852316315f695164063df348cdf",
+      "category": "container_scanning",
+      "message": "CVE-2022-22576 in libcurl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows reusing OAUTH2-authenticated connections without properly ensuring that the connection was authenticated with the same credentials set for this transfer. This issue leads to an authentication bypass, either by mistake or by a malicious actor.",
+      "cve": "CVE-2022-22576",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade libcurl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-22576",
+          "value": "CVE-2022-22576",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-22576"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-22576"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-22576.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "b5de6ed3b0d1683db14d8d8f10e88bcf8aa9772a",
+      "category": "container_scanning",
+      "message": "CVE-2022-27774 in libcurl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows leaking credentials to other servers when it follows redirects from auth-protected HTTP(S) URLs to other protocols and port numbers.",
+      "cve": "CVE-2022-27774",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade libcurl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27774",
+          "value": "CVE-2022-27774",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27774"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27774"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27774.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "32d836aba4d317bf9f5541255f694d6377103dd0",
+      "category": "container_scanning",
+      "message": "CVE-2022-27775 in libcurl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw occurs due to errors in the logic where the config matching function did not take the IPv6 address zone id into account. This issue can lead to curl reusing the wrong connection when one transfer uses a zone id, and the subsequent transfer uses another.",
+      "cve": "CVE-2022-27775",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade libcurl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27775",
+          "value": "CVE-2022-27775",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27775"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27775"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27775.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27775"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    },
+    {
+      "id": "e7589f575ec9f631ead7b8ecd51c37262ea011a0",
+      "category": "container_scanning",
+      "message": "CVE-2022-27776 in libcurl-7.79.1-1.amzn2.0.1",
+      "description": "A vulnerability was found in curl. This security flaw allows leak authentication or cookie header data on HTTP redirects to the same host but another port number. Sending the same set of headers to a server on a different port number is a problem for applications that pass on custom `Authorization:` or `Cookie:`headers. Those headers often contain privacy-sensitive information or data.",
+      "cve": "CVE-2022-27776",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "solution": "Upgrade libcurl to 7.79.1-2.amzn2.0.1",
+      "scanner": {
+        "id": "trivy",
+        "name": "trivy"
+      },
+      "location": {
+        "dependency": {
+          "package": {
+            "name": "libcurl"
+          },
+          "version": "7.79.1-1.amzn2.0.1"
+        },
+        "operating_system": "amazon 2 (Karoo)",
+        "image": "amazoncorretto:8"
+      },
+      "identifiers": [
+        {
+          "type": "cve",
+          "name": "CVE-2022-27776",
+          "value": "CVE-2022-27776",
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27776"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://access.redhat.com/security/cve/CVE-2022-27776"
+        },
+        {
+          "url": "https://curl.se/docs/CVE-2022-27776.html"
+        },
+        {
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776"
+        },
+        {
+          "url": "https://ubuntu.com/security/notices/USN-5397-1"
+        }
+      ]
+    }
+  ],
+  "remediations": [
+    {
+      "fixes": [
+        {
+          "cve": "CVE-2022-22576",
+          "id": "857114844e8ac6cf5c9946ac4d40ab73eccf35df"
+        },
+        {
+          "cve": "CVE-2022-27774",
+          "id": "09675f15e9a285de79a477f12d03bcc08dda8d80"
+        },
+        {
+          "cve": "CVE-2022-27775",
+          "id": "7c07e0b19de5536323882ffb492ec7d3fdf5d029"
+        },
+        {
+          "cve": "CVE-2022-27776",
+          "id": "be0740fbe8024b6041fad1af45062e2acaefb169"
+        }
+      ],
+      "summary": "Upgrade curl to 7.79.1-2.amzn2.0.1",
+      "diff": "ZGlmZiAtLWdpdCBhL0RvY2tlcmZpbGUgYi9Eb2NrZXJmaWxlCmluZGV4IDdkNjMzZDkuLjQxYzdhYTQgMTAwNjQ0Ci0tLSBhL0RvY2tlcmZpbGUKKysrIGIvRG9ja2VyZmlsZQpAQCAtMSArMSwyIEBACiBGUk9NIGRlYmlhbjpsYXRlc3QKK1JVTiB5dW0gLXkgY2hlY2stdXBkYXRlIHx8IHsgcmM9JD87IFsgJHJjIC1uZXEgMTAwIF0gJiYgZXhpdCAkcmM7IHl1bSB1cGRhdGUgLXkgY3VybDsgfSAmJiB5dW0gY2xlYW4gYWxs"
+    },
+    {
+      "fixes": [
+        {
+          "cve": "CVE-2022-22576",
+          "id": "8fbba0e54af83852316315f695164063df348cdf"
+        },
+        {
+          "cve": "CVE-2022-27774",
+          "id": "b5de6ed3b0d1683db14d8d8f10e88bcf8aa9772a"
+        },
+        {
+          "cve": "CVE-2022-27775",
+          "id": "32d836aba4d317bf9f5541255f694d6377103dd0"
+        },
+        {
+          "cve": "CVE-2022-27776",
+          "id": "e7589f575ec9f631ead7b8ecd51c37262ea011a0"
+        }
+      ],
+      "summary": "Upgrade libcurl to 7.79.1-2.amzn2.0.1",
+      "diff": "ZGlmZiAtLWdpdCBhL0RvY2tlcmZpbGUgYi9Eb2NrZXJmaWxlCmluZGV4IDdkNjMzZDkuLmY1ZmExM2IgMTAwNjQ0Ci0tLSBhL0RvY2tlcmZpbGUKKysrIGIvRG9ja2VyZmlsZQpAQCAtMSArMSwzIEBACiBGUk9NIGRlYmlhbjpsYXRlc3QKK1JVTiB5dW0gLXkgY2hlY2stdXBkYXRlIHx8IHsgcmM9JD87IFsgJHJjIC1uZXEgMTAwIF0gJiYgZXhpdCAkcmM7IHl1bSB1cGRhdGUgLXkgbGliY3VybDsgfSAmJiB5dW0gY2xlYW4gYWxsCitSVU4geXVtIC15IGNoZWNrLXVwZGF0ZSB8fCB7IHJjPSQ/OyBbICRyYyAtbmVxIDEwMCBdICYmIGV4aXQgJHJjOyB5dW0gdXBkYXRlIC15IGN1cmw7IH0gJiYgeXVtIGNsZWFuIGFsbA=="
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "trivy",
+      "name": "Trivy",
+      "url": "https://github.com/aquasecurity/trivy/",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "0.26.0"
+    },
+    "analyzer": {
+      "id": "gcs",
+      "name": "GitLab Container Scanning",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "5.1.0"
+    },
+    "scanned_resources": "",
+    "type": "container_scanning",
+    "start_time": "2022-05-19T12:47:33",
+    "end_time": "2022-05-19T12:47:42",
+    "status": "success"
+  },
+  "version": "14.0.6"
+}

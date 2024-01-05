@@ -1,0 +1,310 @@
+{
+  "version": "14.0.0",
+  "vulnerabilities": [
+    {
+      "id": "9d7f8b8d4107312bded5502bcc164be00bac5f42564439fc748e3fdbff707e63",
+      "category": "sast",
+      "name": "eval with argument of type Identifier",
+      "message": "eval with argument of type Identifier",
+      "description": "eval() used with a variable. This can lead to command injection.",
+      "cve": "src/html/index.html:1ec42957a56130bbe6bc2a6328755a5a94ac16d93814a6955a0282091f8fab39:security/detect-eval-with-expression",
+      "severity": "Critical",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/html/index.html",
+        "start_line": 15
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-eval-with-expression",
+          "value": "security/detect-eval-with-expression",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-eval-with-expression"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-95",
+          "value": "95",
+          "url": "https://cwe.mitre.org/data/definitions/95.html"
+        }
+      ]
+    },
+    {
+      "id": "0e96d321684f18ce18867178111d862576c3c1919ddf835df98d3c84a69a670e",
+      "category": "sast",
+      "name": "Generic Object Injection Sink",
+      "message": "Generic Object Injection Sink",
+      "description": "Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype, leading to possible code execution.",
+      "cve": "src/html/index.html:c0c7b09a326468ca1f53a4a9d1241c2f69957cfbd5806f41cc325ebe01f12140:security/detect-object-injection",
+      "severity": "Critical",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/html/index.html",
+        "start_line": 30
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-object-injection",
+          "value": "security/detect-object-injection",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-object-injection"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-94",
+          "value": "94",
+          "url": "https://cwe.mitre.org/data/definitions/94.html"
+        }
+      ]
+    },
+    {
+      "id": "3eeb6c529251b2ffda042058a6d08263ad9f75b7eaba921bfd43433d08b2c59e",
+      "category": "sast",
+      "name": "eval with argument of type Identifier",
+      "message": "eval with argument of type Identifier",
+      "description": "eval() used with a variable. This can lead to command injection.",
+      "cve": "src/js/main.js:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855:security/detect-eval-with-expression",
+      "severity": "Critical",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 10
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-eval-with-expression",
+          "value": "security/detect-eval-with-expression",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-eval-with-expression"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-95",
+          "value": "95",
+          "url": "https://cwe.mitre.org/data/definitions/95.html"
+        }
+      ]
+    },
+    {
+      "id": "3288f017261cfef05a50e0e895d222560976fec00b992c07a153d48ff7f4512b",
+      "category": "sast",
+      "name": "Generic Object Injection Sink",
+      "message": "Generic Object Injection Sink",
+      "description": "Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype, leading to possible code execution.",
+      "cve": "src/js/main.js:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855:security/detect-object-injection",
+      "severity": "Critical",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 28
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-object-injection",
+          "value": "security/detect-object-injection",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-object-injection"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-94",
+          "value": "94",
+          "url": "https://cwe.mitre.org/data/definitions/94.html"
+        }
+      ]
+    },
+    {
+      "id": "307549fe73cd19babeb51982b0fc3900839d4952049f6fe27813b3bc53c4e792",
+      "category": "sast",
+      "name": "Unsafe Regular Expression",
+      "message": "Unsafe Regular Expression",
+      "description": "Potentially unsafe regular expressions. It may take a very long time to run.",
+      "cve": "src/html/index.html:023d9408225a8a1d2d8142434ccb3deffa50da7903e3f1a9e7ce0d4b941579e9:security/detect-unsafe-regex",
+      "severity": "High",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/html/index.html",
+        "start_line": 8
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-unsafe-regex",
+          "value": "security/detect-unsafe-regex",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-unsafe-regex"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-400",
+          "value": "400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html"
+        }
+      ]
+    },
+    {
+      "id": "5b2831d3f30f328a922d4967ef3e9de6e47e240a90c063932c748c67ef8f1180",
+      "category": "sast",
+      "name": "Found non-literal argument to RegExp Constructor",
+      "message": "Found non-literal argument to RegExp Constructor",
+      "description": "RegExp() called with a variable, this might allow an attacker to DOS your application with a long-running regular expression.",
+      "cve": "src/html/index.html:fd35d502035abfc361798528e022e175bf7c9ad47cc8bb29f0574d2b8aa012ca:security/detect-non-literal-regexp",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/html/index.html",
+        "start_line": 19
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-non-literal-regexp",
+          "value": "security/detect-non-literal-regexp",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-non-literal-regexp"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-185",
+          "value": "185",
+          "url": "https://cwe.mitre.org/data/definitions/185.html"
+        }
+      ]
+    },
+    {
+      "id": "47cc1419c18db2d022d6de2d05fe9c8803a2506b6d79c7837c6000f331c24ff0",
+      "category": "sast",
+      "name": "Found non-literal argument to RegExp Constructor",
+      "message": "Found non-literal argument to RegExp Constructor",
+      "description": "RegExp() called with a variable, this might allow an attacker to DOS your application with a long-running regular expression.",
+      "cve": "src/js/main.js:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855:security/detect-non-literal-regexp",
+      "severity": "Medium",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 16
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-non-literal-regexp",
+          "value": "security/detect-non-literal-regexp",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-non-literal-regexp"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-185",
+          "value": "185",
+          "url": "https://cwe.mitre.org/data/definitions/185.html"
+        }
+      ]
+    },
+    {
+      "id": "d8b5a486a5301d67eae7607165b77305eccbb4a86a024ad461b2a6ec4c4b1dd7",
+      "category": "sast",
+      "name": "Potential timing attack, right side: true",
+      "message": "Potential timing attack, right side: true",
+      "description": "Insecure comparisons (==, !=, !== and ===), which check input sequentially. This could lead to timing attacks on your application.",
+      "cve": "src/html/index.html:a53854dbd0609f06a59f4f8b5a14d7a3a43072df3e2cacee9ea9eee4cacced10:security/detect-possible-timing-attacks",
+      "severity": "Low",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/html/index.html",
+        "start_line": 52,
+        "end_line": 54
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-possible-timing-attacks",
+          "value": "security/detect-possible-timing-attacks",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-possible-timing-attacks"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-208",
+          "value": "208",
+          "url": "https://cwe.mitre.org/data/definitions/208.html"
+        }
+      ]
+    },
+    {
+      "id": "6aa93b48d7978ed2e61289c2c7641214cadd6a1b3d8256110ecd0cdbabbd23fd",
+      "category": "sast",
+      "name": "Potential timing attack, right side: true",
+      "message": "Potential timing attack, right side: true",
+      "description": "Insecure comparisons (==, !=, !== and ===), which check input sequentially. This could lead to timing attacks on your application.",
+      "cve": "src/js/main.js:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855:security/detect-possible-timing-attacks",
+      "severity": "Low",
+      "confidence": "Unknown",
+      "scanner": {
+        "id": "eslint",
+        "name": "ESLint"
+      },
+      "location": {
+        "file": "src/js/main.js",
+        "start_line": 50,
+        "end_line": 52
+      },
+      "identifiers": [
+        {
+          "type": "eslint_rule_id",
+          "name": "ESLint rule ID security/detect-possible-timing-attacks",
+          "value": "security/detect-possible-timing-attacks",
+          "url": "https://github.com/nodesecurity/eslint-plugin-security#detect-possible-timing-attacks"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-208",
+          "value": "208",
+          "url": "https://cwe.mitre.org/data/definitions/208.html"
+        }
+      ]
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "eslint",
+      "name": "ESLint",
+      "url": "https://github.com/nodesecurity/eslint-plugin-security",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "7.25.0"
+    },
+    "type": "sast",
+    "start_time": "2021-05-13T22:27:00",
+    "end_time": "2021-05-13T22:27:01",
+    "status": "success"
+  }
+}

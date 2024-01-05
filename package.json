@@ -1,0 +1,46 @@
+{
+    "name": "gitlab-security-scann-parser",
+    "version": "0.0.0-dev-01",
+    "description": "gitlab-security-scann-parser",
+    "main": "./dist/index.js",
+    "scripts": {
+        "start": "node .",
+        "build": "tsc",
+        "test:unit": "mocha --exit -r ts-node/register test/*.ts",
+        "test:coverage": "nyc --reporter cobertura --reporter=html --reporter=text mocha -r ts-node/register --require source-map-support/register --recursive test/*.ts --reporter mocha-junit-reporter --reporter=spec",
+        "test": "npm run test:unit && npm run test:coverage",
+        "dev": "ts-node-dev --respawn --no-deps --rs --cls ./src/index.ts",
+        "eslint": "eslint src/**/*.ts"
+    },
+    "keywords": [
+        "gitlab-security-scann-parser",
+        "created-with-typescript-new-project-scaffolding",
+        "template",
+        "typescript",
+        "node",
+        "nodejs"
+    ],
+    "author": {
+        "email": "info@example.com",
+        "name": "Change me"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "@types/node": "^20.10.6",
+        "@types/convict": "^6.1.6",
+        "eslint": "^8.56.0",
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^6.17.0",
+        "eslint-plugin-prettier": "^5.1.2",
+        "ts-node": "^10.9.2",
+        "ts-node-dev": "^2.0.0",
+        "nyc": "^15.1.0",
+        "mocha": "^10.2.0",
+        "@types/mocha": "^10.0.6"
+    },
+    "dependencies": {
+        "convict": "^6.2.4",
+        "winston": "^3.11.0"
+    }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/master/dist/container-scanning-report-format.json",
+  "title": "Report format for GitLab Container Scanning",
+  "description": "This schema provides the the report format for Container Scanning (https://docs.gitlab.com/ee/user/application_security/container_scanning).",
+  "allOf": [
+    { "$ref": "security-report-format.json" },
+    {
+      "properties": {
+        "scan": {
+          "properties": {
+            "type": {
+              "enum": ["container_scanning"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "vulnerabilities": {
+          "items": {
+            "properties": {
+              "location": { "$ref": "#/definitions/location" }
+            },
+            "required": [ "location" ]
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "location": {
+      "type": "object",
+      "description": "Identifies the vulnerability's location.",
+      "properties": {
+        "dependency": {
+          "$ref": "security-report-format.json#/definitions/dependency"
+        },
+        "operating_system": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The operating system that contains the vulnerable package."
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The analyzed Docker image."
+        },
+        "default_branch_image": {
+          "type": "string",
+          "maxLength": 255,
+          "description": "The name of the image on the default branch."
+        }
+      },
+      "required": [ "dependency", "operating_system", "image" ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.idea/
+config.json
+.nyc_output/
+test-results.xml
