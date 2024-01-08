@@ -29,7 +29,6 @@
         "@types/convict": "^6.1.6",
         "@types/mocha": "^10.0.6",
         "@types/node": "^20.10.6",
-        "@types/node-dir": "^0.0.37",
         "@typescript-eslint/eslint-plugin": "^6.17.0",
         "@typescript-eslint/parser": "^6.17.0",
         "eslint": "^8.56.0",
@@ -42,7 +41,6 @@
     },
     "dependencies": {
         "convict": "^6.2.4",
-        "node-dir": "^0.1.17",
         "winston": "^3.11.0"
     }
 }

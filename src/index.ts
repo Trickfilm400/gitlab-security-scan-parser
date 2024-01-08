@@ -5,7 +5,6 @@ import { SAST } from "./parser/SAST";
 import { Filenames } from "./interfaces/EFilenames";
 import { ContainerScanning } from "./parser/ContainerScanning";
 import { SecretDetection } from "./parser/SecretDetection";
-import * as dir from "node-dir";
 
 logger.info("Starting parser Script...");
 logger.info(`Current working directory: '${process.cwd()}'`);
@@ -45,20 +44,13 @@ function searchFile(dir: string, fileName: string) {
     }
   }
 }
-
+console.log(process.env);
+console.log(JSON.stringify(process.env));
 // start the search in the current directory
-searchFile("/builds", Filenames.CONTAINER);
 searchFile("/", Filenames.CONTAINER);
-dir.files("/builds", function (err, content) {
-  if (err) throw err;
-  console.log("content:", content);
-  console.log(JSON.stringify(content));
-});
-dir.files("/home", function (err, content) {
-  if (err) throw err;
-  console.log("content:", content);
-  console.log(JSON.stringify(content));
-});
+searchFile("/", Filenames.SAST);
+searchFile("/", Filenames.SECRET);
+console.log(process.env.CI_BUILDS_DIR);
 //check SAST file
 
 const sast_exists = fs.existsSync(path.join(process.cwd(), Filenames.SAST));
