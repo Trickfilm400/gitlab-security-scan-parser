@@ -10,6 +10,33 @@ this project aims to improve this experience and security by reading and parsing
 if the scanners have found something.
 
 
+## Usage
+```yaml
+# enable pah reporting for downloadable files (todo: add expire date)
+stages:
+  - test
+  - post
+.sast-analyzer:
+  artifacts:
+    paths:
+      - gl-sast-report.json
+.secret-analyzer:
+  artifacts:
+    paths:
+      - gl-secret-detection-report.json
+gl-testing-parser:
+  image: ghcr.io/trickfilm400/gitlab-security-scan-parser:master
+  allow_failure: true
+  stage: post
+  needs:
+    - container_scanning
+    - nodejs-scan-sast
+    - secret_detection
+  script:
+    # debugging info
+    - ls -lah
+    - npm start
+```
 
 &copy; 2024
 
