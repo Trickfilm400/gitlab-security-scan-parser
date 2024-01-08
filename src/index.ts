@@ -13,7 +13,7 @@ console.log(fs.readdirSync(process.cwd()));
 console.log("Listing '/'...");
 console.log(fs.readdirSync("/"));
 
-function searchFile(dir: string, fileName: string) {
+/*function searchFile(dir: string, fileName: string) {
   // read the contents of the directory
   const files = fs.readdirSync(dir);
 
@@ -33,12 +33,12 @@ function searchFile(dir: string, fileName: string) {
       console.log(filePath);
     }
   }
-}
+}*/
 console.log(process.env);
 // start the search in the current directory
-searchFile(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER);
-searchFile(process.env.CI_PROJECT_DIR!, Filenames.SAST);
-searchFile(process.env.CI_PROJECT_DIR!, Filenames.SECRET);
+// searchFile(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER);
+// searchFile(process.env.CI_PROJECT_DIR!, Filenames.SAST);
+// searchFile(process.env.CI_PROJECT_DIR!, Filenames.SECRET);
 console.log(process.env.CI_BUILDS_DIR);
 console.log(fs.readFileSync(process.env.CI_BUILDS_DIR!));
 //check SAST file
