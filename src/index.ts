@@ -47,7 +47,7 @@ try {
 }
 //check SAST file
 
-const build_dir = process.env.CI_PROJECT_CIR || "";
+const build_dir = process.env.CI_PROJECT_DIR || "";
 const fileNamePaths = {
   sast: path.join(build_dir, Filenames.SAST),
   secret_detection: path.join(build_dir, Filenames.SECRET),
