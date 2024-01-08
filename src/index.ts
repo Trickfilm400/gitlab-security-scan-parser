@@ -24,7 +24,17 @@ try {
   console.log(e);
 }
 console.log(fs.readdirSync(path.join("/builds")));
-dir.files("/", function (err, content) {
+dir.files("/", function (_err, content) {
+  //if (err) throw err;
+  console.log("content:", content);
+  console.log(JSON.stringify(content));
+});
+dir.files("/builds", function (err, content) {
+  if (err) throw err;
+  console.log("content:", content);
+  console.log(JSON.stringify(content));
+});
+dir.files("/home", function (err, content) {
   if (err) throw err;
   console.log("content:", content);
   console.log(JSON.stringify(content));
