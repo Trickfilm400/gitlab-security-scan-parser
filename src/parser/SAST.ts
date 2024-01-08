@@ -1,5 +1,4 @@
 import * as fs from "fs";
-import * as path from "node:path";
 import { logger } from "../logger";
 import { IParser } from "../interfaces/IParser";
 import { Filenames } from "../interfaces/EFilenames";
@@ -15,9 +14,7 @@ export class SAST implements IParser {
   }
   loadFile(filename: string) {
     try {
-      const string = fs
-        .readFileSync(path.join(__dirname, "..", filename))
-        .toString("utf-8");
+      const string = fs.readFileSync(filename).toString("utf-8");
       this.data = JSON.parse(string);
     } catch (e) {
       logger.error(e);

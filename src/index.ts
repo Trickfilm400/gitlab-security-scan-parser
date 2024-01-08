@@ -8,10 +8,10 @@ import { SecretDetection } from "./parser/SecretDetection";
 
 logger.info("Starting parser Script...");
 logger.info(`Current working directory: '${process.cwd()}'`);
-console.log("Listing CWD... (at: " + process.cwd());
+console.log("Listing CWD... :: at: " + process.cwd());
 console.log(fs.readdirSync(process.cwd()));
-console.log("Listing '/'...");
-console.log(fs.readdirSync("/"));
+// console.log("Listing '/'...");
+// console.log(fs.readdirSync("/"));
 
 /*function searchFile(dir: string, fileName: string) {
   // read the contents of the directory
@@ -34,7 +34,7 @@ console.log(fs.readdirSync("/"));
     }
   }
 }*/
-console.log(process.env);
+// console.log(process.env);
 // start the search in the current directory
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.SAST);
@@ -53,13 +53,12 @@ const fileNamePaths = {
   secret_detection: path.join(build_dir, Filenames.SECRET),
   container_scanning: path.join(build_dir, Filenames.CONTAINER),
 };
+console.log("Using files in::");
+console.log(fileNamePaths);
 
 const sast_exists = fs.existsSync(fileNamePaths.sast);
-logger.info("SAST File not found. Skipping.");
 const container_exists = fs.existsSync(fileNamePaths.container_scanning);
-logger.info("Container Scanning File not found. Skipping.");
 const secret_exists = fs.existsSync(fileNamePaths.secret_detection);
-logger.info("Secret Detection File not found. Skipping.");
 
 //run
 let sast_result;
@@ -68,6 +67,8 @@ if (sast_exists) {
   const result = scan.parse();
   console.log(result);
   sast_result = result;
+} else {
+  logger.info("SAST File not found. Skipping.");
 }
 
 //generate exit code
@@ -79,6 +80,8 @@ if (container_exists) {
   const result = scan.parse();
   console.log(result);
   container_result = result;
+} else {
+  logger.info("Container Scanning File not found. Skipping.");
 }
 
 //generate exit code
@@ -90,6 +93,8 @@ if (secret_exists) {
   const result = scan.parse();
   console.log(result);
   secret_result = result;
+} else {
+  logger.info("Secret Detection File not found. Skipping.");
 }
 
 //generate exit code

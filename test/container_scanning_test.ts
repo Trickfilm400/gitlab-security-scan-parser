@@ -4,7 +4,7 @@ import { ContainerScanning } from "../src/parser/ContainerScanning";
 describe("Container Scanning Test", () => {
   it("should find errors", () => {
     const scan = new ContainerScanning(
-      "../test/exampleJsonFiles/container-scanning-example.json",
+      "./test/exampleJsonFiles/container-scanning-example.json",
     );
     const result = scan.parse();
     console.log(result);
@@ -13,7 +13,7 @@ describe("Container Scanning Test", () => {
   });
   it("should find errors without files", () => {
     const scan = new ContainerScanning(
-      "../test/exampleJsonFiles/container-scanning-example-404.json",
+      "./test/exampleJsonFiles/container-scanning-example-404.json",
     );
     const result = scan.parse();
     console.log(result);
@@ -21,7 +21,7 @@ describe("Container Scanning Test", () => {
   });
   it("should find no errors", () => {
     const scan = new ContainerScanning(
-      "../test/exampleJsonFiles/container-scanning-example-empty.json",
+      "./test/exampleJsonFiles/container-scanning-example-empty.json",
     );
     const result = scan.parse();
     console.log(result);

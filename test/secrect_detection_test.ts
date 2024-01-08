@@ -4,7 +4,7 @@ import { SecretDetection } from "../src/parser/SecretDetection";
 describe("Secret Detection Test", () => {
   it("should find errors", () => {
     const scan = new SecretDetection(
-      "../test/exampleJsonFiles/secret-detection-example.json",
+      "./test/exampleJsonFiles/secret-detection-example.json",
     );
     const result = scan.parse();
     console.log(result);
@@ -13,7 +13,7 @@ describe("Secret Detection Test", () => {
   });
   it("should find errors without file", () => {
     const scan = new SecretDetection(
-      "../test/exampleJsonFiles/secret-detection-example-404.json",
+      "./test/exampleJsonFiles/secret-detection-example-404.json",
     );
     const result = scan.parse();
     console.log(result);
@@ -21,7 +21,7 @@ describe("Secret Detection Test", () => {
   });
   it("should find no errors", () => {
     const scan = new SecretDetection(
-      "../test/exampleJsonFiles/secret-detection-example-empty.json",
+      "./test/exampleJsonFiles/secret-detection-example-empty.json",
     );
     const result = scan.parse();
     console.log(result);
