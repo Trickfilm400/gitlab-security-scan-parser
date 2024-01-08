@@ -47,23 +47,24 @@ try {
 }
 //check SAST file
 
-const sast_exists = fs.existsSync(
-  path.join(process.env.CI_PROJECT_DIR!, Filenames.SAST),
-);
+const build_dir = process.env.CI_PROJECT_CIR || "";
+const fileNamePaths = {
+  sast: path.join(build_dir, Filenames.SAST),
+  secret_detection: path.join(build_dir, Filenames.SECRET),
+  container_scanning: path.join(build_dir, Filenames.CONTAINER),
+};
+
+const sast_exists = fs.existsSync(fileNamePaths.sast);
 logger.info("SAST File not found. Skipping.");
-const container_exists = fs.existsSync(
-  path.join(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER),
-);
+const container_exists = fs.existsSync(fileNamePaths.container_scanning);
 logger.info("Container Scanning File not found. Skipping.");
-const secret_exists = fs.existsSync(
-  path.join(process.env.CI_PROJECT_DIR!, Filenames.SECRET),
-);
+const secret_exists = fs.existsSync(fileNamePaths.secret_detection);
 logger.info("Secret Detection File not found. Skipping.");
 
 //run
 let sast_result;
 if (sast_exists) {
-  const scan = new SAST();
+  const scan = new SAST(fileNamePaths.sast);
   const result = scan.parse();
   console.log(result);
   sast_result = result;
@@ -74,7 +75,7 @@ if (sast_result?.error) process.exitCode = 1;
 
 let container_result;
 if (container_exists) {
-  const scan = new ContainerScanning();
+  const scan = new ContainerScanning(fileNamePaths.container_scanning);
   const result = scan.parse();
   console.log(result);
   container_result = result;
@@ -85,7 +86,7 @@ if (container_result?.error) process.exitCode = 1;
 
 let secret_result;
 if (secret_exists) {
-  const scan = new SecretDetection();
+  const scan = new SecretDetection(fileNamePaths.secret_detection);
   const result = scan.parse();
   console.log(result);
   secret_result = result;
