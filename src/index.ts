@@ -39,20 +39,20 @@ console.log(process.env);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.SAST);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.SECRET);
-console.log(process.env.CI_BUILDS_DIR);
-console.log(fs.readFileSync(process.env.CI_BUILDS_DIR!));
+console.log(process.env.CI_PROJECT_DIR);
+console.log(fs.readFileSync(process.env.CI_PROJECT_DIR!));
 //check SAST file
 
 const sast_exists = fs.existsSync(
-  path.join(process.env.CI_BUILDS_DIR!, Filenames.SAST),
+  path.join(process.env.CI_PROJECT_DIR!, Filenames.SAST),
 );
 logger.info("SAST File not found. Skipping.");
 const container_exists = fs.existsSync(
-  path.join(process.env.CI_BUILDS_DIR!, Filenames.CONTAINER),
+  path.join(process.env.CI_PROJECT_DIR!, Filenames.CONTAINER),
 );
 logger.info("Container Scanning File not found. Skipping.");
 const secret_exists = fs.existsSync(
-  path.join(process.env.CI_BUILDS_DIR!, Filenames.SECRET),
+  path.join(process.env.CI_PROJECT_DIR!, Filenames.SECRET),
 );
 logger.info("Secret Detection File not found. Skipping.");
 
