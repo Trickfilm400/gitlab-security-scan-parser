@@ -5,6 +5,7 @@ import { SAST } from "./parser/SAST";
 import { Filenames } from "./interfaces/EFilenames";
 import { ContainerScanning } from "./parser/ContainerScanning";
 import { SecretDetection } from "./parser/SecretDetection";
+import * as dir from "node-dir";
 
 logger.info("Starting parser Script...");
 logger.info(`Current working directory: '${process.cwd()}'`);
@@ -23,6 +24,11 @@ try {
   console.log(e);
 }
 console.log(fs.readdirSync(path.join("/builds")));
+dir.files("/", function (err, content) {
+  if (err) throw err;
+  console.log("content:", content);
+  console.log(JSON.stringify(content));
+});
 //check SAST file
 
 const sast_exists = fs.existsSync(path.join(process.cwd(), Filenames.SAST));
