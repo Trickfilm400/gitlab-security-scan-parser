@@ -40,7 +40,11 @@ console.log(process.env);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.SAST);
 // searchFile(process.env.CI_PROJECT_DIR!, Filenames.SECRET);
 console.log(process.env.CI_PROJECT_DIR);
-console.log(fs.readFileSync(process.env.CI_PROJECT_DIR!));
+try {
+  console.log(fs.readdirSync(process.env.CI_PROJECT_DIR!));
+} catch (e) {
+  console.log(e);
+}
 //check SAST file
 
 const sast_exists = fs.existsSync(
