@@ -18,10 +18,12 @@ stages:
   - post
 .sast-analyzer:
   artifacts:
+    expire_in: 1 week
     paths:
       - gl-sast-report.json
 .secret-analyzer:
   artifacts:
+    expire_in: 1 week
     paths:
       - gl-secret-detection-report.json
 gl-testing-parser:
@@ -37,6 +39,12 @@ gl-testing-parser:
     - ls -lah
     - npm start
 ```
+
+### Future features and ideas (contributions welcome)
+- [ ] add html report (for gitlab pages or whatever)
+- [ ] add more report files (DAST Scanning / Premium Scanner)
+- [ ] improve parsing of data (ignore specific vulnerabilities or whatever)
+- [ ] add configuration for en/-disable specific test files on purpose
 
 &copy; 2024
 
