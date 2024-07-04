@@ -32,7 +32,7 @@ gl-testing-parser:
   stage: post
   needs:
     - container_scanning
-    - nodejs-scan-sast
+    - semgrep-sast
     - secret_detection
   script:
     # debugging info
