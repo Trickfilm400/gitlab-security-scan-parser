@@ -7,7 +7,7 @@ export class ContainerScanning implements IParser {
   private data: {
     scan: never;
     version: string;
-    vulnerabilities: Array<{ message: string }>;
+    vulnerabilities: Array<{ message?: string, description?: string }>;
     remediations: Array<{ summary: string }>;
   };
   constructor(filename: string = Filenames.CONTAINER) {
@@ -33,15 +33,27 @@ export class ContainerScanning implements IParser {
       this.data.vulnerabilities.length > 0 ||
       this.data.remediations.length > 0
     ) {
-      return {
-        error: true,
-        error_count:
-          this.data.vulnerabilities.length + this.data.remediations.length,
-        error_message: "Found Container Scanning vulnerabilities",
-        error_details: this.data.vulnerabilities
-          .map((e) => e.message)
-          .concat(this.data.remediations.map((e) => e.summary)),
-      };
+      if (this.data.version.startsWith("14.")) {
+        return {
+          error: true,
+          error_count:
+            this.data.vulnerabilities.length + this.data.remediations.length,
+          error_message: "Found Container Scanning vulnerabilities",
+          error_details: this.data.vulnerabilities
+            .map((e) => e.message)
+            .concat(this.data.remediations.map((e) => e.summary)),
+        };
+      } else if (this.data.version.startsWith("15.")) {
+        return {
+          error: true,
+          error_count:
+            this.data.vulnerabilities.length + this.data.remediations.length,
+          error_message: "Found Container Scanning vulnerabilities",
+          error_details: this.data.vulnerabilities
+            .map((e) => e.description)
+            .concat(this.data.remediations.map((e) => e.summary)),
+        };
+      }
     }
     //else
     return {
