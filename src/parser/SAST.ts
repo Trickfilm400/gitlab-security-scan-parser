@@ -4,6 +4,7 @@ import { IParser } from "../interfaces/IParser";
 import { Filenames } from "../interfaces/EFilenames";
 
 export class SAST implements IParser {
+  //@ts-expect-error since ts 6.0
   private data: {
     scan: never;
     version: string;
@@ -15,6 +16,7 @@ export class SAST implements IParser {
   loadFile(filename: string) {
     try {
       const string = fs.readFileSync(filename).toString("utf-8");
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       this.data = JSON.parse(string);
     } catch (e) {
       logger.error(e);

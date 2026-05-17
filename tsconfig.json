@@ -5,8 +5,8 @@
 		"lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
 		"sourceMap": false,
 		"outDir": "./dist",
-		"moduleResolution": "node",
-
+		"rootDir": "./src",
+		"types": ["mocha"],
 		"removeComments": true,
 		"noImplicitAny": true,
 		"strictNullChecks": true,
@@ -16,7 +16,6 @@
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-		"allowSyntheticDefaultImports": false,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true
 	},
